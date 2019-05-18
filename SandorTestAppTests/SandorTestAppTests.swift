@@ -42,8 +42,9 @@ class SandorTestAppTests: XCTestCase {
         let searchResult = SearchResult()
         SearchResult().saveSearchResult(searchResult: searchResult)
         XCTAssertEqual("", searchResult.imageStringURL)
+        XCTAssertTrue(searchResult.imageStringURL.isEmpty)
     }
-    
+
     func testSaveSearchResult() {
         let searchResult = SearchResult()
         searchResult.imageStringURL = Constants.imageStringURL
