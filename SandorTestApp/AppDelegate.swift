@@ -17,11 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        if let searchVC = SearchViewController(nibName: Configuration.initialViewName, bundle: nil) as? SearchViewController {
-            self.window?.rootViewController = searchVC
-            self.window?.makeKeyAndVisible()
-        }
+        let navController = UINavigationController()
+        navController.navigationBar.isHidden = true
+        self.window?.rootViewController = navController
+        self.window?.makeKeyAndVisible()
         
+        if let searchVC = SearchViewController(nibName: Configuration.initialViewName, bundle: nil) as? SearchViewController {
+        navController.show(searchVC, sender: nil)
+        }
+
         return true
     }
     
