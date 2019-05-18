@@ -26,8 +26,27 @@ extension SearchViewController: UISearchBarDelegate {
     // MARK: - UISearchBar Delegate
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-      //reguest
+        guard Reachability.isConnectedToNetwork() else {
+            self.showAlert(message: Constants.alertNoInternetText)
+            return
+        }
+        
+        guard let keyword = searchBar.text else {return }
+        DispatchQueue.global(qos: .background).async {
+            
+            HTTPClient.searchForImage(searchPhrase: keyword, callback: { (json, status) in
+                if status {
+                    
+                    DispatchQueue.main.async {
+                       //parse json, update ui
+                    }
+                } else {
+                    
+                }
+            })
+        }
     }
+    
     
     func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let char = text.cString(using: String.Encoding.utf8)!
@@ -42,6 +61,7 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController {
     struct Constants {
+           static let alertNoInternetText = "Internet Connection is not Available!"
         static let maxSearchCharacter = 20
 }
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6B254C1B7A113F7500D7A303 /* Pods_SandorTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4892CDF9455D06F4C62E875A /* Pods_SandorTestAppTests.framework */; };
 		9913EDB922906F6200DE5804 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913EDB822906F6200DE5804 /* SearchResult.swift */; };
+		9913EDBC2290761B00DE5804 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913EDBB2290761B00DE5804 /* HTTPClient.swift */; };
+		9913EDBE2290763200DE5804 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913EDBD2290763200DE5804 /* Reachability.swift */; };
 		991744EA228ED4D40041C91E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991744E9228ED4D40041C91E /* AppDelegate.swift */; };
 		991744EF228ED4D40041C91E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991744ED228ED4D40041C91E /* Main.storyboard */; };
 		991744F1228ED4D60041C91E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991744F0228ED4D60041C91E /* Assets.xcassets */; };
@@ -44,6 +46,8 @@
 		338392AE0EFE0DDA1A8B8C21 /* Pods_SandorTestAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SandorTestAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4892CDF9455D06F4C62E875A /* Pods_SandorTestAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SandorTestAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9913EDB822906F6200DE5804 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		9913EDBB2290761B00DE5804 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		9913EDBD2290763200DE5804 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		991744E6228ED4D40041C91E /* SandorTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SandorTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		991744E9228ED4D40041C91E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		991744EE228ED4D40041C91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +111,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9913EDBA229075FA00DE5804 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9913EDBB2290761B00DE5804 /* HTTPClient.swift */,
+				9913EDBD2290763200DE5804 /* Reachability.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		991744DD228ED4D40041C91E = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +145,7 @@
 		991744E8228ED4D40041C91E /* SandorTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				9913EDBA229075FA00DE5804 /* API */,
 				991744E9228ED4D40041C91E /* AppDelegate.swift */,
 				99200A0222905B6D00E0B5DF /* Configuration */,
 				99174519228EDB6B0041C91E /* Resources */,
@@ -454,8 +468,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9913EDBE2290763200DE5804 /* Reachability.swift in Sources */,
 				99200A0122905B2100E0B5DF /* Extension.swift in Sources */,
 				99200A0422905B8300E0B5DF /* Configuration.swift in Sources */,
+				9913EDBC2290761B00DE5804 /* HTTPClient.swift in Sources */,
 				9913EDB922906F6200DE5804 /* SearchResult.swift in Sources */,
 				99200A0922905C7500E0B5DF /* SearchViewController.swift in Sources */,
 				991744EA228ED4D40041C91E /* AppDelegate.swift in Sources */,

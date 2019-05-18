@@ -30,6 +30,10 @@ extension UIViewController {
 }
 
 extension String {
+    
+    func getURL() -> URL {
+        return URL(string: self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
+    }
 
     func checkMaxCharacters(maxChar: Int = 20, text: String = "The searched phrase") -> String {
         return (self.characters.count) <= maxChar ? "" : text + " can contain only \(maxChar) characters"
