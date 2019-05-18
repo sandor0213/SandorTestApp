@@ -38,7 +38,9 @@ extension SearchViewController: UISearchBarDelegate {
                 if status {
                     
                     DispatchQueue.main.async {
-                       //parse json, update ui
+                        guard let searchResult = SearchResult().createSearchResult(searchedWord: keyword, json: json!) else {return}
+                        SearchResult().saveSearchResult(searchResult: searchResult)
+                       // update ui
                     }
                 } else {
                     

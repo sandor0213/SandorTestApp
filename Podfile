@@ -6,6 +6,7 @@ target 'SandorTestApp' do
     use_frameworks!
     
     pod 'RealmSwift'
+    pod 'ObjectMapper', '~> 3.4'
 
     # Pods for SandorTestApp
     
