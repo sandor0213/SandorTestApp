@@ -8,13 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		6B254C1B7A113F7500D7A303 /* Pods_SandorTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4892CDF9455D06F4C62E875A /* Pods_SandorTestAppTests.framework */; };
+		9913EDB922906F6200DE5804 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913EDB822906F6200DE5804 /* SearchResult.swift */; };
+		9913EDBC2290761B00DE5804 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913EDBB2290761B00DE5804 /* HTTPClient.swift */; };
+		9913EDBE2290763200DE5804 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913EDBD2290763200DE5804 /* Reachability.swift */; };
+		9913EDC12290A41400DE5804 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9913EDC02290A41400DE5804 /* SearchResultTableViewCell.swift */; };
 		991744EA228ED4D40041C91E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991744E9228ED4D40041C91E /* AppDelegate.swift */; };
-		991744EC228ED4D40041C91E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991744EB228ED4D40041C91E /* ViewController.swift */; };
 		991744EF228ED4D40041C91E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991744ED228ED4D40041C91E /* Main.storyboard */; };
 		991744F1228ED4D60041C91E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 991744F0228ED4D60041C91E /* Assets.xcassets */; };
 		991744F4228ED4D60041C91E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 991744F2228ED4D60041C91E /* LaunchScreen.storyboard */; };
 		991744FF228ED4D70041C91E /* SandorTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991744FE228ED4D70041C91E /* SandorTestAppTests.swift */; };
 		9917450A228ED4D70041C91E /* SandorTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99174509228ED4D70041C91E /* SandorTestAppUITests.swift */; };
+		99200A0122905B2100E0B5DF /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99200A0022905B2100E0B5DF /* Extension.swift */; };
+		99200A0422905B8300E0B5DF /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99200A0322905B8300E0B5DF /* Configuration.swift */; };
+		99200A0722905C4300E0B5DF /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99200A0622905C4300E0B5DF /* SearchView.xib */; };
+		99200A0922905C7500E0B5DF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99200A0822905C7500E0B5DF /* SearchViewController.swift */; };
 		B88F0DA27B34D5D03C99DB72 /* Pods_SandorTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F211D823F7A224B1B67B50D /* Pods_SandorTestApp.framework */; };
 		BBC3E18CF5B2ED3D948312F2 /* Pods_SandorTestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 338392AE0EFE0DDA1A8B8C21 /* Pods_SandorTestAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -39,9 +46,12 @@
 /* Begin PBXFileReference section */
 		338392AE0EFE0DDA1A8B8C21 /* Pods_SandorTestAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SandorTestAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4892CDF9455D06F4C62E875A /* Pods_SandorTestAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SandorTestAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9913EDB822906F6200DE5804 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		9913EDBB2290761B00DE5804 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		9913EDBD2290763200DE5804 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		9913EDC02290A41400DE5804 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		991744E6228ED4D40041C91E /* SandorTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SandorTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		991744E9228ED4D40041C91E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		991744EB228ED4D40041C91E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		991744EE228ED4D40041C91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		991744F0228ED4D60041C91E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		991744F3228ED4D60041C91E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +62,10 @@
 		99174505228ED4D70041C91E /* SandorTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SandorTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99174509228ED4D70041C91E /* SandorTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandorTestAppUITests.swift; sourceTree = "<group>"; };
 		9917450B228ED4D70041C91E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99200A0022905B2100E0B5DF /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		99200A0322905B8300E0B5DF /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		99200A0622905C4300E0B5DF /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		99200A0822905C7500E0B5DF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9F211D823F7A224B1B67B50D /* Pods_SandorTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SandorTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8A66405A417D9997ADBC208 /* Pods-SandorTestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SandorTestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SandorTestAppTests/Pods-SandorTestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A9D4515E0A42099BF5BD7542 /* Pods-SandorTestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SandorTestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SandorTestAppTests/Pods-SandorTestAppTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +113,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9913EDBA229075FA00DE5804 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9913EDBB2290761B00DE5804 /* HTTPClient.swift */,
+				9913EDBD2290763200DE5804 /* Reachability.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		9913EDBF2290A3CE00DE5804 /* Table View Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9913EDC02290A41400DE5804 /* SearchResultTableViewCell.swift */,
+			);
+			path = "Table View Cell";
+			sourceTree = "<group>";
+		};
 		991744DD228ED4D40041C91E = {
 			isa = PBXGroup;
 			children = (
@@ -125,11 +156,14 @@
 			isa = PBXGroup;
 			children = (
 				991744E9228ED4D40041C91E /* AppDelegate.swift */,
-				991744EB228ED4D40041C91E /* ViewController.swift */,
-				991744ED228ED4D40041C91E /* Main.storyboard */,
-				991744F0228ED4D60041C91E /* Assets.xcassets */,
-				991744F2228ED4D60041C91E /* LaunchScreen.storyboard */,
-				991744F5228ED4D60041C91E /* Info.plist */,
+				9913EDBA229075FA00DE5804 /* API */,
+				99200A0222905B6D00E0B5DF /* Configuration */,
+				99174519228EDB6B0041C91E /* Resources */,
+				9917451A228EDB960041C91E /* Supporting Files */,
+				99174518228EDB4B0041C91E /* View Controller */,
+				9913EDBF2290A3CE00DE5804 /* Table View Cell */,
+				99200A0522905C0800E0B5DF /* View */,
+				99174517228EDB1E0041C91E /* Model */,
 			);
 			path = SandorTestApp;
 			sourceTree = "<group>";
@@ -150,6 +184,57 @@
 				9917450B228ED4D70041C91E /* Info.plist */,
 			);
 			path = SandorTestAppUITests;
+			sourceTree = "<group>";
+		};
+		99174517228EDB1E0041C91E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9913EDB822906F6200DE5804 /* SearchResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		99174518228EDB4B0041C91E /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				99200A0822905C7500E0B5DF /* SearchViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		99174519228EDB6B0041C91E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				991744ED228ED4D40041C91E /* Main.storyboard */,
+				991744F0228ED4D60041C91E /* Assets.xcassets */,
+				991744F2228ED4D60041C91E /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9917451A228EDB960041C91E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				991744F5228ED4D60041C91E /* Info.plist */,
+				99200A0022905B2100E0B5DF /* Extension.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		99200A0222905B6D00E0B5DF /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				99200A0322905B8300E0B5DF /* Configuration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		99200A0522905C0800E0B5DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99200A0622905C4300E0B5DF /* SearchView.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D356E591A41387EEF8BB43A4 /* Pods */ = {
@@ -176,7 +261,7 @@
 				991744E2228ED4D40041C91E /* Sources */,
 				991744E3228ED4D40041C91E /* Frameworks */,
 				991744E4228ED4D40041C91E /* Resources */,
-				3C70B265859AFABB2CE3ABD1 /* [CP] Embed Pods Frameworks */,
+				064A29357DC087D4A1EE54B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -273,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99200A0722905C4300E0B5DF /* SearchView.xib in Resources */,
 				991744F4228ED4D60041C91E /* LaunchScreen.storyboard in Resources */,
 				991744F1228ED4D60041C91E /* Assets.xcassets in Resources */,
 				991744EF228ED4D40041C91E /* Main.storyboard in Resources */,
@@ -296,6 +382,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		064A29357DC087D4A1EE54B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SandorTestApp/Pods-SandorTestApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SandorTestApp/Pods-SandorTestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		131AD931D50283D43E353829 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -340,30 +452,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3C70B265859AFABB2CE3ABD1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SandorTestApp/Pods-SandorTestApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SandorTestApp/Pods-SandorTestApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		F574FB637C918659B10620E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -393,7 +481,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				991744EC228ED4D40041C91E /* ViewController.swift in Sources */,
+				9913EDBE2290763200DE5804 /* Reachability.swift in Sources */,
+				99200A0122905B2100E0B5DF /* Extension.swift in Sources */,
+				9913EDC12290A41400DE5804 /* SearchResultTableViewCell.swift in Sources */,
+				99200A0422905B8300E0B5DF /* Configuration.swift in Sources */,
+				9913EDBC2290761B00DE5804 /* HTTPClient.swift in Sources */,
+				9913EDB922906F6200DE5804 /* SearchResult.swift in Sources */,
+				99200A0922905C7500E0B5DF /* SearchViewController.swift in Sources */,
 				991744EA228ED4D40041C91E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,7 +665,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SandorTestApp/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/SandorTestApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -589,7 +684,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = SandorTestApp/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/SandorTestApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
