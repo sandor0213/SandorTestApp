@@ -155,8 +155,8 @@
 		991744E8228ED4D40041C91E /* SandorTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				9913EDBA229075FA00DE5804 /* API */,
 				991744E9228ED4D40041C91E /* AppDelegate.swift */,
+				9913EDBA229075FA00DE5804 /* API */,
 				99200A0222905B6D00E0B5DF /* Configuration */,
 				99174519228EDB6B0041C91E /* Resources */,
 				9917451A228EDB960041C91E /* Supporting Files */,

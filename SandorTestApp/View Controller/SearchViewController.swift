@@ -19,7 +19,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.searchBar.returnKeyType = .done
-         self.searchTableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: Constants.searchResultCellRI)
+        self.searchTableView.register(SearchResultTableViewCell.self, forCellReuseIdentifier: Constants.searchResultCellRI)
         hideKeyboardWhenTappedAround()
     }
     
@@ -45,7 +45,7 @@ extension SearchViewController: UISearchBarDelegate {
                         if searchResult.imageStringURL.isEmpty {self.showAlert(message: Constants.alertEmptyResultText + keyword + Constants.endAlertEmptyResultText)}
                         SearchResult().saveSearchResult(searchResult: searchResult)
                         
-                         guard let searchResults = SearchResult.getSearchResults() else {return}
+                        guard let searchResults = SearchResult.getSearchResults() else {return}
                         self.searchResults = searchResults
                         self.searchTableView.reloadData()
                         self.viewDidLayoutSubviews()
@@ -102,4 +102,5 @@ extension SearchViewController {
         static let maxSearchCharacter = 20
     }
 }
+
 
