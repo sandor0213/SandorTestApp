@@ -34,6 +34,15 @@ extension String {
     func getURL() -> URL {
         return URL(string: self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)!
     }
+    
+    func getImageFromStringUrl() -> UIImage? {
+        guard let url = URL(string: self),
+            let data = try? Data(contentsOf: url),
+            let image = UIImage(data: data) else {
+                return nil
+        }
+        return image
+    }
 
     func checkMaxCharacters(maxChar: Int = 20, text: String = "The searched phrase") -> String {
         return (self.characters.count) <= maxChar ? "" : text + " can contain only \(maxChar) characters"
