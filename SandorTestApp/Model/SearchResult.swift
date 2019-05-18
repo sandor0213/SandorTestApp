@@ -33,7 +33,7 @@ class SearchResult: Object, Mappable {
     func saveSearchResult(searchResult: SearchResult?){
         DispatchQueue.main.async {
             guard let searchResult = searchResult else {return}
-            
+            if searchResult.imageStringURL.isEmpty {return}
             do {
                 let realm = try Realm()
                 

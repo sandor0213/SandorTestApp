@@ -19,7 +19,7 @@ class SearchViewController: UIViewController {
         self.searchBar.returnKeyType = .done
         hideKeyboardWhenTappedAround()
     }
-
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -39,11 +39,12 @@ extension SearchViewController: UISearchBarDelegate {
                     
                     DispatchQueue.main.async {
                         guard let searchResult = SearchResult().createSearchResult(searchedWord: keyword, json: json!) else {return}
+                        if searchResult.imageStringURL.isEmpty {self.showAlert(message: Constants.alertEmptyResultText + keyword + Constants.endAlertEmptyResultText)}
                         SearchResult().saveSearchResult(searchResult: searchResult)
                        // update ui
                     }
                 } else {
-                    
+                    self.showAlert(message: Constants.alertEmptyResultText + keyword + Constants.endAlertEmptyResultText)
                 }
             })
         }
@@ -63,6 +64,8 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController {
     struct Constants {
+        static let alertEmptyResultText = "Sorry, no results were found for \""
+        static let endAlertEmptyResultText = "\""
            static let alertNoInternetText = "Internet Connection is not Available!"
         static let maxSearchCharacter = 20
 }
