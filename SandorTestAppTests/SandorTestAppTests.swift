@@ -27,12 +27,15 @@ class SandorTestAppTests: XCTestCase {
     }
     
     func testCreateSearchResult() {
+        let expectation = self.expectation(description: "exp")
         HTTPClient.searchForImage(searchPhrase: Constants.searchPhrase) { (json, status) in
             if status {
+                expectation.fulfill()
                 let searchResult = SearchResult().createSearchResult(searchedWord: Constants.searchPhrase, json: json!)
                 XCTAssertNotNil(searchResult)
             }
         }
+        self.wait(for: [expectation], timeout: Constants.timeInterval)
     }
     
     func testSaveSearchResultWithEmptyImageStringURL() {
@@ -56,10 +59,13 @@ class SandorTestAppTests: XCTestCase {
     }
     
     func testSearchForImage() {
+        let expectation = self.expectation(description: "exp")
         HTTPClient.searchForImage(searchPhrase: Constants.searchPhrase) { (json, status) in
+            expectation.fulfill()
             XCTAssertTrue(status)
             XCTAssertNotNil(status)
         }
+        self.wait(for: [expectation], timeout: Constants.timeInterval)
     }
     
     func testReachability() {
@@ -97,7 +103,7 @@ extension SandorTestAppTests {
         static let searchPhrase = "cat"
         static let notSearchPhrase = "dog"
         static let maxSearchCharacter = 20
+        static let timeInterval = 1.7
     }
     
 }
-
