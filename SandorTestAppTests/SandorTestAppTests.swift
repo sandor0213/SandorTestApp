@@ -31,7 +31,7 @@ class SandorTestAppTests: XCTestCase {
         HTTPClient.searchForImage(searchPhrase: Constants.searchPhrase) { (json, status) in
             if status {
                 expectation.fulfill()
-                let searchResult = SearchResult().createSearchResult(searchedWord: Constants.searchPhrase, json: json!)
+                let searchResult = SearchResult.createSearchResult(searchedWord: Constants.searchPhrase, json: json!)
                 XCTAssertNotNil(searchResult)
             }
         }
@@ -40,16 +40,16 @@ class SandorTestAppTests: XCTestCase {
     
     func testSaveSearchResultWithEmptyImageStringURL() {
         let searchResult = SearchResult()
-        SearchResult().saveSearchResult(searchResult: searchResult)
+        SearchResult.saveSearchResult(searchResult: searchResult)
         XCTAssertEqual("", searchResult.imageStringURL)
         XCTAssertTrue(searchResult.imageStringURL.isEmpty)
     }
-
+    
     func testSaveSearchResult() {
         let searchResult = SearchResult()
         searchResult.imageStringURL = Constants.imageStringURL
         searchResult.searchedWord = Constants.searchPhraseNewYork
-        SearchResult().saveSearchResult(searchResult: searchResult)
+        SearchResult.saveSearchResult(searchResult: searchResult)
         XCTAssertEqual(Constants.imageStringURL, searchResult.imageStringURL)
         XCTAssertFalse(searchResult.imageStringURL.isEmpty)
     }
@@ -57,6 +57,15 @@ class SandorTestAppTests: XCTestCase {
     func testGetSearchResults() {
         let searchResults = SearchResult.getSearchResults()
         XCTAssertNotNil(searchResults)
+    }
+    
+    func testRemoveSearchResult() {
+        guard let searchResults = SearchResult.getSearchResults() else {return XCTFail()}
+        let searchResultsCount = searchResults.count
+        if !searchResults.isEmpty {
+            SearchResult.removeSearchResult(searchResult: searchResults.first)
+        }
+        XCTAssertEqual(searchResultsCount, searchResults.count + 1)
     }
     
     func testSearchForImage() {

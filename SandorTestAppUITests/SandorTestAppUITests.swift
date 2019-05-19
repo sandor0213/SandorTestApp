@@ -112,6 +112,21 @@ class SandorTestAppUITests: XCTestCase {
         
     }
     
+    func testRemoveSearchResult() {
+        
+        let app = XCUIApplication()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .other).element.children(matching: .searchField).element.tap()
+        
+        let aKey = app/*@START_MENU_TOKEN@*/.keys["A"]/*[[".keyboards.keys[\"A\"]",".keys[\"A\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        aKey.tap()
+        app/*@START_MENU_TOKEN@*/.buttons["Done"]/*[[".keyboards.buttons[\"Done\"]",".buttons[\"Done\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let tablesQuery = app.tables
+        tablesQuery.children(matching: .cell).element(boundBy: 0).staticTexts["A"].swipeLeft()
+        tablesQuery.buttons["Delete"].tap()
+        
+    }
+    
 }
 
 
@@ -124,5 +139,7 @@ extension SandorTestAppUITests {
     }
     
 }
+
+
 
 

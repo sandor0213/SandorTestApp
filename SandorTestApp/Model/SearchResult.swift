@@ -24,13 +24,13 @@ class SearchResult: Object, Mappable {
         imageStringURL <- map["images.0.display_sizes.0.uri"]
     }
     
-    func createSearchResult(searchedWord: String, json: [String:Any]) -> SearchResult? {
+    static func createSearchResult(searchedWord: String, json: [String:Any]) -> SearchResult? {
         guard let searchResult = Mapper<SearchResult>().map(JSON: json as! [String : Any]) else {return nil}
         searchResult.searchedWord = searchedWord
         return searchResult
     }
     
-    func saveSearchResult(searchResult: SearchResult?){
+    static func saveSearchResult(searchResult: SearchResult?){
         DispatchQueue.main.async {
             guard let searchResult = searchResult else {return}
             if searchResult.imageStringURL.isEmpty {return}
@@ -56,7 +56,20 @@ class SearchResult: Object, Mappable {
         }
     }
     
+    static func removeSearchResult(searchResult: SearchResult?) {
+        guard let searchResult = searchResult else {return}
+        do {
+            let realm = try Realm()
+            try realm.write {
+                realm.delete(searchResult)
+            }
+        } catch let error as NSError {
+            return
+        }
+    }
+    
 }
+
 
 extension SearchResult {
     struct Constants {
@@ -64,4 +77,3 @@ extension SearchResult {
     }
     
 }
-
