@@ -25,6 +25,7 @@ class SearchViewController: UIViewController {
     
 }
 
+
 extension SearchViewController: UISearchBarDelegate {
     // MARK: - UISearchBar Delegate
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -39,17 +40,17 @@ extension SearchViewController: UISearchBarDelegate {
             
             HTTPClient.searchForImage(searchPhrase: keyword, callback: { (json, status) in
                 if status {
+                    guard let searchResult = SearchResult.createSearchResult(searchedWord: keyword, json: json!) else {return}
+                    if searchResult.imageStringURL.isEmpty {self.showAlert(message: Constants.alertEmptyResultText + keyword + Constants.endAlertEmptyResultText)}
+                    SearchResult.saveSearchResult(searchResult: searchResult)
                     
                     DispatchQueue.main.async {
-                        guard let searchResult = SearchResult().createSearchResult(searchedWord: keyword, json: json!) else {return}
-                        if searchResult.imageStringURL.isEmpty {self.showAlert(message: Constants.alertEmptyResultText + keyword + Constants.endAlertEmptyResultText)}
-                        SearchResult().saveSearchResult(searchResult: searchResult)
-                        
                         guard let searchResults = SearchResult.getSearchResults() else {return}
                         self.searchResults = searchResults
                         self.searchTableView.reloadData()
                         self.viewDidLayoutSubviews()
                     }
+                    
                 } else {
                     self.showAlert(message: Constants.alertEmptyResultText + keyword + Constants.endAlertEmptyResultText)
                 }
@@ -61,12 +62,12 @@ extension SearchViewController: UISearchBarDelegate {
         let char = text.cString(using: String.Encoding.utf8)!
         let isBackSpace = strcmp(char, "\\b")
         let text = (isBackSpace == -92) ? String(searchBar.text!.dropLast()) : searchBar.text! + text
-        
         self.showAlert(message: text.checkMaxCharacters())
         return text.count <= Constants.maxSearchCharacter
     }
     
 }
+
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - UItableView Delegate
@@ -76,9 +77,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.searchResultCellRI) as! SearchResultTableViewCell
-        DispatchQueue.main.async {
-            cell.setUp(searchedWord: self.searchResults![indexPath.row].searchedWord, searchImageStringURL: self.searchResults![indexPath.row].imageStringURL)
-        }
+        cell.setUp(searchedWord: self.searchResults![indexPath.row].searchedWord, searchImageStringURL: self.searchResults![indexPath.row].imageStringURL)
         return cell
     }
     
@@ -86,11 +85,24 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return Constants.heightForRowAt
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            SearchResult.removeSearchResult(searchResult: self.searchResults![indexPath.row])
+            tableView.deleteRows(at: [indexPath], with: .none)
+            self.viewDidLayoutSubviews()
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         self.searchTableView.isScrollEnabled = (Constants.heightForRowAt * CGFloat(searchResults!.count)) > self.searchTableView.frame.size.height
     }
     
 }
+
 
 extension SearchViewController {
     struct Constants {
@@ -101,6 +113,5 @@ extension SearchViewController {
         static let heightForRowAt: CGFloat = 44
         static let maxSearchCharacter = 20
     }
+    
 }
-
-
