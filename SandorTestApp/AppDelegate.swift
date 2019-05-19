@@ -23,9 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         if let searchVC = SearchViewController(nibName: Configuration.initialViewName, bundle: nil) as? SearchViewController {
-        navController.show(searchVC, sender: nil)
+            navController.show(searchVC, sender: nil)
         }
-
+        
         return true
     }
     
@@ -53,5 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
 }
+
+
 
 

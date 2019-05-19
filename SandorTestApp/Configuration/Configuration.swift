@@ -15,4 +15,3 @@ final class Configuration {
     static let header = [Configuration.headerAuthKeyword : Configuration.apiKey]
     static let initialViewName = "SearchView"
 }
-

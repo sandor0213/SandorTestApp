@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -27,7 +28,9 @@ extension UIViewController {
             present(alertController, animated: true, completion: nil)
         }
     }
+    
 }
+
 
 extension String {
     
@@ -46,6 +49,19 @@ extension String {
     
     func checkMaxCharacters(maxChar: Int = 20, text: String = "The searched phrase") -> String {
         return (self.characters.count) <= maxChar ? "" : text + " can contain only \(maxChar) characters"
+    }
+    
+}
+
+
+@IBDesignable open class customSearchBar: UISearchBar {
+    @IBInspectable var cornerRadius: Double {
+        get {
+            return Double(self.layer.cornerRadius)
+        }set {
+            self.layer.cornerRadius = CGFloat(newValue)
+            self.layer.masksToBounds = true
+        }
     }
     
 }
